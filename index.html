@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harry store</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="icon" href="static/icon/iconn.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <!----------------------- Nav Start----------------------------------- -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+
+        <a class="navbar-brand" href="#"><img src="static/icon/iconn.png" style="width: 50px; height: 50px;"> <b>Harry
+            Store</b></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="cart">
+              <a class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                aria-backdropcontrols="offcanvasWithBothOptions"><i class="bi bi-cart2"></i><span>Cart</span></a>
+            </li>
+          </ul>
+
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Accounts
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"><i class="bi bi-bag"></i>Orders</a></li>
+              <li><a class="dropdown-item" href="#"><i class="bi bi-person-circle"></i>Profile</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><button type="button" class="bg"><span class="hi"><i
+                      class="bi bi-box-arrow-right"></i>Logout</span></button></li>
+            </ul>
+            </li>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!------------------------------- Nav End---------------------------------------- -->
+  </header>
+  <!-- ------------------- Carousel Start------------------------------------- -->
+  <div class="caro">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+          aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+          aria-label="Slide 5"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="static/image/carou11.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="static/image/carou2.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="static/image/carou3.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="static/image/carou4.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="static/image/carou55.avif" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!----------------------- Carousel end------------------------- -->
+
+  <!-------------------------  Card  start--------------------------------- -->
+  <section id="cards" class=" products mt-4 p-2">
+    <div class="container-fluid text-center">
+      <div class="row g-5">
+
+      </div>
+  </section>
+  <!-- end -->
+
+  <!-- <div class="card" style="width: 18rem;">
+    <img src="static/image/card1.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Mobiles <br>start from 7999
+
+      </p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="static/image/card1.2.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Laptops<br>Upto 50% Off</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="static/image/card2.jpg" class="card-img-top w-100" alt="...">
+    <div class="card-body">
+      <p class="card-text">Shoes <br>Upto 70% Off</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="static/image/card3.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text"> Childrens Toys <br>
+        Shop now </p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="static/image/card4.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text"> Men and Women Dress <br>
+        start from 250</p>
+    </div>
+  </div>
+
+
+  <div class="card" style="width: 18rem;">
+    <img src="static/image/card5.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Stationery items <br>From 49</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="static/image/card6.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text"> Grocery's<br>Upto 20% Off</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="static/image/card77.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">TV and Appliances <br>Upto 35% Off</p>
+
+
+    </div>
+    <!----------------------- Card end----------------------------------- -->
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <main>
+    <!--------------------- -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+      aria-labelledby="offcanvasWithBothOptionsLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Your Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body m-auto ">
+        <p>Your Cart is empty</p>
+      </div>
+    </div>
+  </main>
+  <!-----------------------Footer Start-------------------------- -->
+  <footer>
+    <section id="foot">
+      <div class="net">
+        <p>Get connected with us on social networks:</p>
+      </div>
+      <div class="ico">
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-twitter"></i></a>
+        <a href=""><i class="bi bi-google"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-youtube"></i></a>
+      </div>
+    </section id="mid">
+    <div class="containers text-center">
+      <div class="row">
+        <div class="col">
+          <span class="span">
+            <h3>HARRY STORE</h3>
+          </span>
+          <p>
+            <span>Harry Store is your one-stop destination</span>
+            <span>for all your shopping needs, offering a</span>
+            <span>wide variety of groceries, electronics,</span>
+            <span> fashion, and lifestyle products under one</span>
+            <span>roof.</span>
+          </p>
+
+        </div>
+        <div class="col">
+          <a href="" class="title">
+            <h3>PRODUCTS</h3>
+          </a>
+          <a href="">Mobiles</a>
+          <a href="">Grocery's</a>
+          <a href="">TV and Appliances</a>
+          <a href="">Stationery items</a>
+          <a href="">Childrens Toys</a>
+          <a href=""> Dress</a>
+
+          </p>
+        </div>
+        <div class="col">
+          <a href="" class="title">
+            <h3>CUSTOMER CARE</h3>
+          </a>
+          <a href="">Your Account </a>
+          <a href=""> Customer Service</a>
+          <a href="">Shipping Rates</a>
+          <a href=""> Help</a>
+        </div>
+        <div class="col">
+          <a href="" class="title">
+            <h3>CONTACT</h3>
+          </a>
+          <a href=""><i class="bi bi-house"></i>Bangalore,560068,INDIA</a>
+          <a href=""><i class="bi bi-envelope"></i>harrystore7@gmail.com</a>
+          <a href=""><i class="bi bi-telephone"></i>+ 01 234 567 89</a>
+          <a href=""><i class="bi bi-printer"></i> +09 876 543 32</a>
+        </div>
+      </div>
+      <div class="last">
+        <p><i class="bi bi-c-circle"></i>2020 Copyrights:harrystore7@gmail.com</p>
+      </div>
+
+  </footer>
+  <!----------------------- Footer End---------------------------------- -->
+  <script src="static/js/script.js"></script>
+
+</body>
+
+
+</html>
