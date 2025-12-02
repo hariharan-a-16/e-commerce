@@ -44,25 +44,29 @@ const products = [
 
     {
         title: "TV and Appliances",
-        description: "Smart and energy-efficient TV appliances. Crystal-clear display with rich sound for immersive viewing.",
+        description: "Smart and energy-efficient TV appliances.",
         price: 20000, img: "card77.jpg",
         discount: 3000, off: 50
     },
-            {
+    {
         title: " Grocery's",
-         description: "Fresh and quality groceries for your daily needs. Carefully packed for hygiene and taste.",
-          price: 20000,
-           img: "card6.jpg",
-            discount: 3000,
-             off: 50
+        description: "Fresh and quality groceries for your daily needs. Carefully packed for hygiene and taste.",
+        price: 20000,
+        img: "card6.jpg",
+        discount: 3000,
+        off: 50
     },
-     {
-         title: "Stationery items",
-          description: "High-quality stationery item designed for everyday writing and office needs.",
-           price: 20000, 
-           img: "card5.jpg",
-            discount: 3000, off: 50 },
-             { title: "Men and Women Dress ", description: "Trendy and comfortable men’s & women’s wear — perfect for casual, office, or special occasions", price: 20000, img: "card4.webp", discount: 3000, off: 50 }
+    {
+        title: "Stationery items",
+        description: "High-quality stationery item designed for everyday writing and office needs.",
+        price: 20000,
+        img: "card5.jpg",
+        discount: 3000, off: 50
+    },
+    { title: "Men and Women Dress ",
+         description: "Trendy and comfortable men’s & women’s wear — perfect for casual, office, or special occasions",
+          price: 20000, img: "card4.webp",
+           discount: 3000, off: 50 }
 ];
 
 
@@ -85,12 +89,11 @@ products.forEach(product => {
                     <small><sup style="color:red">${product.off}%</sup></small>
                     <strong> Rs:${product.price}</strong>
                 </p>
-
-                <button class="btn btn-secondary text-light add-to-cart"
-                    data-name="${product.title}"
-                    data-price="${product.price}"
-                    data-img="${product.img}">
-                    Add to cart
+                <button class="btn-premium add-to-cart addCartBtn"
+                data-name="${product.title}"
+                data-price="${product.price}"
+                data-img="${product.img}">
+                Add to Cart
                 </button>
             </div>
         </div>
@@ -101,9 +104,20 @@ products.forEach(product => {
 
 
 // ---------- ADD TO CART ----------
+// Handle quantity and remove buttons
+// ---------- CLICK HANDLER FOR ADD, + , - , REMOVE ----------
 document.addEventListener("click", (e) => {
 
+    // =============================
+    // ADD TO CART (ANIMATION INCLUDED)
+    // =============================
     if (e.target.classList.contains("add-to-cart")) {
+
+        // Button animation
+        e.target.classList.add("added-effect");
+        setTimeout(() => {
+            e.target.classList.remove("added-effect");
+        }, 500);
 
         const name = e.target.dataset.name;
         const price = parseInt(e.target.dataset.price);
@@ -119,6 +133,39 @@ document.addEventListener("click", (e) => {
 
         updateCartUI();
     }
+
+    // =============================
+    // INCREASE QUANTITY
+    // =============================
+    if (e.target.classList.contains("increase")) {
+        let index = e.target.dataset.index;
+        cart[index].qty++;
+        updateCartUI();
+    }
+
+    // =============================
+    // DECREASE QUANTITY
+    // =============================
+    if (e.target.classList.contains("decrease")) {
+        let index = e.target.dataset.index;
+
+        if (cart[index].qty > 1) {
+            cart[index].qty--;
+        } else {
+            cart.splice(index, 1);  // remove item if qty becomes zero
+        }
+        updateCartUI();
+    }
+
+    // =============================
+    // REMOVE ITEM
+    // =============================
+    if (e.target.classList.contains("remove-btn")) {
+        let index = e.target.dataset.index;
+        cart.splice(index, 1);
+        updateCartUI();
+    }
+
 });
 
 
@@ -127,19 +174,38 @@ function updateCartUI() {
     cartItemsContainer.innerHTML = "";
     let total = 0;
 
-    cart.forEach(item => {
+    cart.forEach((item, index) => {
         total += item.price * item.qty;
 
         cartItemsContainer.innerHTML += `
-            <div class="d-flex justify-content-between align-items-center mb-2">
-                <div>
-                    <strong>${item.name}</strong><br>
-                    Qty: ${item.qty}
+            <div class="cart-item-box">
+
+                <div class="cart-item-left">
+                    <img src="static/image/${item.img}" class="cart-item-img">
+
+                    <div>
+                        <div class="cart-item-name">${item.name}</div>
+
+                        <div class="cart-item-qty-box">
+                            <button class="qty-btn decrease" data-index="${index}">−</button>
+                            <span class="qty-number">${item.qty}</span>
+                            <button class="qty-btn increase" data-index="${index}">+</button>
+                        </div>
+                    </div>
                 </div>
-                <div>₹${item.price * item.qty}</div>
+
+                <div class="cart-item-right">
+                    <div class="cart-item-price">₹${item.price * item.qty}</div>
+                    <button class="remove-btn" data-index="${index}">Remove</button>
+                </div>
+
             </div>
         `;
     });
 
     cartTotal.textContent = "₹" + total;
+
+    // Update cart counter
+    document.getElementById("cart-count").textContent = cart.length;
 }
+

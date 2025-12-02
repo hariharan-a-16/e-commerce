@@ -34,10 +34,14 @@
           </form>
 
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="cart">
-              <a class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-                aria-backdropcontrols="offcanvasWithBothOptions"><i class="bi bi-cart2"></i><span>Cart</span></a>
-            </li>
+           <li class="cart">
+  <a class="btn cart-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions">
+    <i class="bi bi-cart2"></i>
+    <span>Cart</span>
+    <span id="cart-count" class="cart-count">0</span>
+  </a>
+</li>
+
           </ul>
 
           <div class="nav-item dropdown">
